@@ -16,4 +16,4 @@ systemctl start nginx
 
 echo -e "download code into nginx path"
 
-curl -s -L -o "https://github.com/stans-robot-project/frontend/archive/main.zip" >> /tmp/frontend.zip
+curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
