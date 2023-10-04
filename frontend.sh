@@ -19,4 +19,4 @@ curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend
 
 cd /usr/share/nginx/html
 rm -rf *
-# unzip /tmp/frontend.zip
+unzip /tmp/frontend.zip
