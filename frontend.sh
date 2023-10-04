@@ -8,7 +8,7 @@ if [ $user_id -ne 0 ]; then
   exit 1
 fi  
 
-echo "installing nginx"
+echo -e "\e[32m installing nginx\e[0m"
 
 yum install nginx -y
 systemctl enable nginx
