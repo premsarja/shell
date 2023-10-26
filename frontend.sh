@@ -1,4 +1,5 @@
 #!/bin/bash
+#
 
 user_id=$(id -u)
 
@@ -19,4 +20,12 @@ curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend
 
 cd /usr/share/nginx/html
 rm -rf * 
-unzip /tmp/frontend.main
+
+
+sudo cd /usr/share/nginx/html
+sudo rm -rf *
+sudo unzip /tmp/frontend.zip
+sudo mv frontend-main/* .
+sudo mv static/* .
+sudo rm -rf frontend-main README.md
+sudo mv localhost.conf /etc/nginx/default.d/roboshop.conf
