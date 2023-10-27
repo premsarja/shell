@@ -5,7 +5,7 @@ echo "i am frontend"
 USER_ID=$(id -u)
 
 if [[ $USER_ID -ne 0 ]] ; then
-   echo "please be ROOT user \t EXAMPLE: sudo <filename>"
+   echo -e "please be ROOT user \t EXAMPLE: sudo <filename>"
 fi
 # yum install nginx -y
 # systemctl enable nginx
