@@ -11,7 +11,7 @@ fi
 
 echo -e "\e[35m  configuring frontend ......!!! \e[0m"
 
-echo -n "installing frontend"
+echo -n "installing frontend: "
 yum install nginx -y &>> /tmp/frontend.log
 
 if [[ $? -eq 0 ]]; then
