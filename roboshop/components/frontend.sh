@@ -10,7 +10,15 @@ if [[ $USER_ID -ne 0 ]] ; then
 fi
 
 echo -e "\e[35m  configuring frontend ......!!! \e[0m"
+
+echo -n "installing frontend"
 yum install nginx -y &>> /tmp/frontend.log
+
+if [[ $? -eq 0 ]]; then
+  echo "\e[32m sucees \e[0m" 
+else
+  echo  "\e[33m sucees \e[0m" 
+fi
 # systemctl enable nginx
 # systemctl start nginx
 
