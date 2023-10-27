@@ -9,7 +9,7 @@ if [[ $USER_ID -ne 0 ]] ; then
    exit 1
 fi
 
-echo "\e[31m  hi \e[0m"
+echo -e "\e[31m  hi \e[0m"
 # yum install nginx -y
 # systemctl enable nginx
 # systemctl start nginx
