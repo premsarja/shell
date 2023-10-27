@@ -9,8 +9,8 @@ if [[ $USER_ID -ne 0 ]] ; then
    exit 1
 fi
 
-echo -e "\e[31m  hi \e[0m"
-# yum install nginx -y
+echo -e "\e[35m  configuring frontend ......!!! \e[0m"
+yum install nginx -y &>> /tmp/frontend.log
 # systemctl enable nginx
 # systemctl start nginx
 
