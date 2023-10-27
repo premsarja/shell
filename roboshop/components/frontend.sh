@@ -8,6 +8,8 @@ if [[ $USER_ID -ne 0 ]] ; then
    echo -e "\e[31m please be ROOT user \e[0m  \n \t EXAMPLE: sudo <filename> "
    exit 1
 fi
+
+echo "\e[31m  hi \e[0m"
 # yum install nginx -y
 # systemctl enable nginx
 # systemctl start nginx
