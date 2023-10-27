@@ -5,7 +5,7 @@ echo "i am frontend"
 USER_ID=$(id -u)
 
 if [[ $USER_ID -ne 0 ]] ; then
-   echo -e "\e[31m please be ROOT user \n \n \t EXAMPLE: sudo <filename> \e[0m"
+   echo -e "\e[31m please be ROOT user \e[0m" \n \n \t EXAMPLE: sudo <filename> 
    exit 1
 fi
 # yum install nginx -y
