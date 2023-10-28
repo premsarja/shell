@@ -24,8 +24,10 @@ echo -e "\e[35m  configuring frontend ......!!! \e[0m"
 echo -n "installing frontend: "
 yum install nginx -y &>> /tmp/frontend.log
 STATUS $?
-# systemctl enable nginx
-# systemctl start nginx
+
+echo -e "\e[35m starting the service"
+systemctl enable nginx
+systemctl start nginx
 
 # curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 
