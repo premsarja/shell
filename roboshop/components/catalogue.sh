@@ -1,6 +1,6 @@
 #!/bin/bash
-set -e
-echo "i am catalogue"
+
+echo "i am fronten catalogue"
 
 ID=roboshop
 USER_ID=$(id -u)
@@ -31,9 +31,10 @@ if [[ id -ne 0 ]]; then
 fi
 STATUS $?
 
-echo "installing the component" 
+echo -ne " installing the component " 
 curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
-unzip -o /tmp/catalogue.zip
+unzip -o /tmp/catalogue.zip &>> /tmp/catalogue.log
+STATUS $?
 
 echo -n "moving component: "
 mv -f /home/roboshop/catalogue-main  /home/roboshop/catalogue  &>/dev/null
