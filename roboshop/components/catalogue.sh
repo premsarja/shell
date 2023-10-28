@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-echo "i am fronten catalogue"
+echo "i am catalogue"
 
 ID=roboshop
 USER_ID=$(id -u)
@@ -43,4 +43,3 @@ chown -R roboshop:roboshop /home/roboshop/catalogue
 cd /home/roboshop/catalogue
 npm install &>> /tmp/catalogue.log
 STATUS $?
-set -x
