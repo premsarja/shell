@@ -33,12 +33,13 @@ STATUS $?
 
 echo -ne " installing the component " 
 curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
-cd /home/roboshop
+pwd
+cd ${pwd}
 unzip -o /tmp/catalogue.zip &>> /tmp/catalogue.log
 STATUS $?
 
 echo -n "moving component: "
-mv  /home/roboshop/catalogue-main  /home/roboshop/catalogue  &>/dev/null
+mv -f /home/roboshop/catalogue-main  /home/roboshop/catalogue  &>/dev/null
 chown -R roboshop:roboshop /home/roboshop/catalogue
 cd /home/roboshop/catalogue
 npm install &>> /tmp/catalogue.log
