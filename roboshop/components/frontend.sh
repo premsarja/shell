@@ -19,40 +19,40 @@ fi
 
 }
 
-echo -e "\e[35m  configuring frontend ......!!! \e[0m"
+echo -e "\e[33m  configuring frontend ......!!! \e[0m"
 
 echo -n "installing frontend: "
 yum install nginx -y &>> /tmp/frontend.log
 STATUS $?
 
-echo  -n -e "\e[35m starting the service:"
+echo  -n -e "\e[33m starting the service \e[0m:"
 systemctl enable nginx
 systemctl start nginx
 STATUS $?
 
-echo -n "downloading the component:"
+echo -ne "\e[33m downloading the component \e[0m:"
 
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip" &>> /tmp/frontend.log
 STATUS $?
 
-echo "installing the downloaded component file"
+echo -ne "\e[33m installing the downloaded component file; \e[0m"
 cd /usr/share/nginx/html
 STATUS $?
 
-echo -n "removing the deafault content of file;"
+echo -ne "\e[33m removing the deafault content of file \e[0m; "
 rm -rf *
 STATUS $?
 
-echo -n "unzipping the content from the file;"
+echo -ne "\e[33m unzipping the content from the file \e[0m;"
 unzip /tmp/frontend.zip
 STATUS $?
 
-echo -n "unzimoving file to current directory;"
+echo -ne "\e[33m unzimoving file to current directory \e[0m;"
 mv frontend-main/* .
 mv static/* .
 rm -rf frontend-main README.md
 STATUS $?
 
-echo -n "move the roboshop conf file to nginx default directory"
+echo -ne "\e[33m move the roboshop conf file to nginx default directory \e[0m"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 STATUS $?
