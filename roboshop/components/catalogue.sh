@@ -33,8 +33,6 @@ STATUS $?
 
 echo "installing the component" 
 curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
-pwd
-cd ${pwd}
 unzip -o /tmp/catalogue.zip
 
 echo -n "moving component: "
