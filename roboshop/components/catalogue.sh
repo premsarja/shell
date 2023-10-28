@@ -1,7 +1,8 @@
 #!/bin/bash
 
-echo "i am frontend"
+echo "i am fronten catalogued"
 
+ID=roboshop
 USER_ID=$(id -u)
 
 if [[ $USER_ID -ne 0 ]] ; then
@@ -24,8 +25,8 @@ yum install nodejs -y  &>> /tmp/catalogue.log
 STATUS $?
 
 echo -ne "\e[33m creating roboshop user \e[0m"
-ID=1001   
-if [[ ID -ne 0 ]]; then
+id =${ID}
+if [[ id -ne 0 ]]; then
   useradd roboshop
 fi
 STATUS $?
