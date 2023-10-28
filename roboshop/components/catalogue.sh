@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "i am fronten catalogued"
+echo "i am fronten catalogue"
 
 ID=roboshop
 USER_ID=$(id -u)
@@ -34,7 +34,7 @@ STATUS $?
 echo -ne " installing the component " 
 curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
 cd /home/roboshop
-unzip /tmp/catalogue.zip &>> /tmp/catalogue.log
+unzip -o /tmp/catalogue.zip &>> /tmp/catalogue.log
 mv catalogue-main catalogue
 cd /home/roboshop/catalogue
 npm install &>> /tmp/catalogue.log
