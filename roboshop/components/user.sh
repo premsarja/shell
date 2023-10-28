@@ -24,7 +24,7 @@ yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release
 yum install nodejs -y  &>> /tmp/user.log
 STATUS $?
 
-echo -ne "\e[33m creating roboshop user \e[0m"
+echo -ne "\e[33m creating roboshop user \e[0m ; "
 id=${ID}
 if [[ id -ne 0 ]]; then
   useradd roboshop
@@ -33,7 +33,6 @@ STATUS $?
 
 echo -ne " installing the component " 
 curl -s -L -o /tmp/user.zip "https://github.com/stans-robot-project/user/archive/main.zip"
-cd /home/roboshop
 unzip -o /tmp/user.zip &>> /tmp/user.log
 STATUS $?
 
