@@ -43,6 +43,9 @@ echo -ne "\e[33m download and install schema \e[0m: "
 curl -s -L -o /tmp/mongodb.zip "https://github.com/stans-robot-project/mongodb/archive/main.zip"
 cd /tmp
 unzip -o mongodb.zip &>> /tmp/mongod.log
+STATUS $?
+
+echo -ne "\e[33m installing  schema \e[0m: "
 cd mongodb-main
 mongo < catalogue.js
 mongo < users.js
