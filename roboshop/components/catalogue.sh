@@ -36,7 +36,6 @@ curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalog
 pwd
 cd ${pwd}
 unzip -o /tmp/catalogue.zip &>> /tmp/catalogue.log
-STATUS 
 
 echo -n "moving component: "
 mv -f /home/roboshop/catalogue-main  /home/roboshop/catalogue  &>/dev/null
