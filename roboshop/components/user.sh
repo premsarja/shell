@@ -1,4 +1,5 @@
 #!/bin/bash 
+set -e
 
 echo "i am fronten user"
 
@@ -57,3 +58,4 @@ systemctl start user
 systemctl status user -l
 STATUS $?
 
+set -x
