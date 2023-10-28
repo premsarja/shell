@@ -1,5 +1,4 @@
 #!/bin/bash 
-set -e
 
 echo "i am  user"
 
@@ -22,7 +21,7 @@ fi
 
 echo -ne "\e[33m installing the nodejs component \e[0m ; "
 yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-yum install nodejs -y
+yum install nodejs -y 
 STATUS $?
 
 echo -ne "\e[33m creating roboshop user \e[0m ; "
@@ -56,5 +55,3 @@ systemctl daemon-reload
 systemctl start user
 systemctl status user -l
 STATUS $?
-
-set -x
