@@ -39,7 +39,7 @@ STATUS $?
 
 echo -n "moving component: "
 mv  catalogue-main catalogue
-chown -R roboshop:roboshop /home/robouser/catalogue
+chown -R roboshop:roboshop /home/roboshop/catalogue
 cd /home/roboshop/catalogue
 npm install &>> /tmp/catalogue.log
 STATUS $?
