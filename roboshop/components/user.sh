@@ -21,8 +21,8 @@ fi
 }
 
 echo -ne "\e[33m installing the nodejs component \e[0m ; "
-yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y &>> /tmp/catalogue.log
-yum install nodejs -y  &>> /tmp/catalogue.log
+yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y &>> /tmp/user.log
+yum install nodejs -y  &>> /tmp/user.log
 STATUS $?
 
 echo -ne "\e[33m creating roboshop user \e[0m"
