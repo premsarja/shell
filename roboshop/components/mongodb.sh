@@ -24,7 +24,7 @@ curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans
 STATUS $?
 
 echo -ne "\e[33m downloading the mongoDb ......! \e[0m; " 
-yum install -y mongodb-org
+yum install -y mongodb-org &>> /tmp/mongod.log
 systemctl enable mongod
 systemctl start mongod
 STATUS $?
