@@ -36,7 +36,6 @@ STATUS $?
 
 echo -n "moving component: "
 mv -f /home/roboshop/user-main  /home/roboshop/user  &>/dev/null
-cd /home/roboshop/user
 chown -R roboshop:roboshop /home/roboshop/user
 cd /home/roboshop/user
 npm install &>> /tmp/user.log
