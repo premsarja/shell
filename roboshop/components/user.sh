@@ -20,7 +20,7 @@ fi
 }
 
 echo -ne "\e[33m installing the nodejs component \e[0m ; "
-sudo yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y &>> /tmp/catalogue.log
+yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y &>> /tmp/catalogue.log
 yum install nodejs -y  &>> /tmp/catalogue.log
 STATUS $?
 
@@ -45,7 +45,6 @@ npm install &>> /tmp/user.log
 STATUS $?
  
 echo -n "updating the file:  "
-/home/roboshop/user/systemd.service
 sed -ie 's/MONGO_ENDPOINT/172.31.20.91/' /home/roboshop/user/systemd.service
 sed -ie 's/REDIS_ENDPOINT/172.31.27.233/' /home/roboshop/user/systemd.service
 STATUS $?
