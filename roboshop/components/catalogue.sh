@@ -18,8 +18,8 @@ else
 fi
 }
 
-echo  "installing the nodeja component"
-sudo yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-yum install nodejs -y
+echo -n "installing the nodeja component; "
+sudo yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y &>> /tmp/catalogue.log
+yum install nodejs -y  &>> /tmp/catalogue.log
 STATUS $?
 
