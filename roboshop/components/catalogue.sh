@@ -26,5 +26,6 @@ STATUS $?
 
 echo -ne "\e[33m creating roboshop user \e[0m"
 if [[ ID -ne 0 ]]; then
-useradd roboshop
+  useradd roboshop
+fi
 STATUS $?
