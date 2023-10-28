@@ -53,6 +53,6 @@ mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.servic
 systemctl daemon-reload
 systemctl start catalogue
 systemctl enable catalogue
-systemctl status catalogue -l
+systemctl status catalogue -l  &>> /tmp/catalogue.log
 STATUS $?
 
