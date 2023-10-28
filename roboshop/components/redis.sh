@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-echo "i am frontend"
+echo "i am redis"
 
 USER_ID=$(id -u)
 
