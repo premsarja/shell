@@ -18,7 +18,6 @@ else
 fi
 }
 
-
 echo -ne "\e[33m downloading the Db directory which provided by devloper \e[0m; "
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
 STATUS $?
