@@ -35,7 +35,7 @@ echo -ne " installing the component "
 curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
 pwd
 cd ${pwd}
-unzip -o /tmp/catalogue.zip &>> /tmp/catalogue.log
+unzip -o /tmp/catalogue.zip
 
 echo -n "moving component: "
 mv -f /home/roboshop/catalogue-main  /home/roboshop/catalogue  &>/dev/null
