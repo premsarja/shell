@@ -9,17 +9,21 @@ if [[ $USER_ID -ne 0 ]] ; then
    exit 1
 fi
 
-echo -e "\e[35m  configuring frontend ......!!! \e[0m"
-
-echo -n "installing frontend: "
-yum install nginx -y &>> /tmp/frontend.log
-
-if [[ $? -eq 0 ]]; then
+STATUS() {
+    if [[ $? -eq 0 ]]; then
   echo -e "\e[32m sucees \e[0m" 
 else
   echo -e "\e[33m failed \e[0m" 
   exit 2
 fi
+
+}
+
+echo -e "\e[35m  configuring frontend ......!!! \e[0m"
+
+echo -n "installing frontend: "
+yum install nginx -y &>> /tmp/frontend.log
+STATUS $?
 # systemctl enable nginx
 # systemctl start nginx
 
