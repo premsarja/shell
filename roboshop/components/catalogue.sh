@@ -43,3 +43,16 @@ chown -R roboshop:roboshop /home/roboshop/catalogue
 cd /home/roboshop/catalogue
 npm install &>> /tmp/catalogue.log
 STATUS $?
+
+echo -n "updating the ${COMPONENT} systemfile: "
+sed -ie 's/MONGO_DNSNAME/172.31.20.91/g' /home/roboshop/catalogue/systemd.service
+STATUS $?
+
+echo -n "moving the  systemfile: "
+mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+systemctl daemon-reload
+systemctl start catalogue
+systemctl enable catalogue
+systemctl status catalogue -l
+STATUS $?
+
