@@ -56,6 +56,6 @@ echo -n "starting the systemfile: "
 systemctl daemon-reload
 systemctl start catalogue
 systemctl enable catalogue
-systemctl status catalogue -l  &>> /tmp/catalogue.log
+systemctl status catalogue -l
 STATUS $?
 
