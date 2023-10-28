@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 echo "i am fronten catalogue"
 
 ID=roboshop
@@ -43,3 +43,4 @@ chown -R roboshop:roboshop /home/roboshop/catalogue
 cd /home/roboshop/catalogue
 npm install &>> /tmp/catalogue.log
 STATUS $?
+set -x
