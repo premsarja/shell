@@ -47,8 +47,8 @@ STATUS $?
 
 echo -ne "\e[33m installing  schema \e[0m: "
 cd mongodb-main
-mongo < catalogue.js
-mongo < users.js
+mongo < catalogue.js  &>> /tmp/mongod.log
+mongo < users.js      &>> /tmp/mongod.log
 STATUS $?
 
 
