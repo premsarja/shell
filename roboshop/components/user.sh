@@ -31,22 +31,22 @@ STATUS $?
 
 echo -ne " installing the component " 
 curl -s -L -o /tmp/user.zip "https://github.com/stans-robot-project/user/archive/main.zip"
+cd /home/roboshop
 unzip -o /tmp/user.zip &>> /tmp/user.log
 STATUS $?
 
 echo -n "moving component: "
 mv -f /home/roboshop/user-main  /home/roboshop/user  &>/dev/null
-cd /home/roboshop/user
-chown -R roboshop:roboshop /home/roboshop/user
+cd  /home/roboshop/user
+chown -R roboshop:roboshop  /home/roboshop/user
 npm install &>> /tmp/user.log
 STATUS $?
-
+ 
 echo -n "updating the file:  "
 /home/roboshop/user/systemd.service
 sed -ie 's/MONGO_ENDPOINT/172.31.20.91/' /home/roboshop/user/systemd.service
 sed -ie 's/REDIS_ENDPOINT/172.31.27.233/' /home/roboshop/user/systemd.service
 STATUS $?
-
 
 echo -n "starting the systemfile: "
 mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service
