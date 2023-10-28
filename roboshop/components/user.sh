@@ -1,4 +1,5 @@
 #!/bin/bash 
+set -e
 
 echo "i am  user"
 
@@ -55,3 +56,5 @@ systemctl daemon-reload
 systemctl start user
 systemctl status user -l
 STATUS $?
+
+set -x
