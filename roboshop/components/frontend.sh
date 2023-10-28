@@ -44,7 +44,7 @@ rm -rf *
 STATUS $?
 
 echo -ne "\e[33m unzipping the content from the file \e[0m;" 
-unzip /tmp/frontend.zip $>> /tmp/frontend.log
+unzip /tmp/frontend.zip &>> /tmp/frontend.log
 STATUS $?
 
 echo -ne "\e[33m moving file to current directory \e[0m;"
