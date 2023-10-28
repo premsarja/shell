@@ -1,7 +1,6 @@
 #!/bin/bash 
-set -e
 
-echo "i am fronten user"
+echo "i am  user"
 
 ID=roboshop
 USER_ID=$(id -u)
@@ -57,5 +56,3 @@ systemctl daemon-reload
 systemctl start user
 systemctl status user -l
 STATUS $?
-
-set -x
