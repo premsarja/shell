@@ -20,7 +20,7 @@ fi
 
 echo -n "downloading the repo of redis and installing redis: "
 curl -L https://raw.githubusercontent.com/stans-robot-project/redis/main/redis.repo -o /etc/yum.repos.d/redis.repo
-yum install redis-6.2.11 -y
+yum install redis-6.2.13 -y
 STATUS $?
 
 echo -n "updating bind ip-address: "
