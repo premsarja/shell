@@ -1,3 +1,5 @@
+#!/bin/bash 
+
 echo "i am fronten user"
 
 ID=roboshop
