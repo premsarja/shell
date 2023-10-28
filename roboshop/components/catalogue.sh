@@ -38,8 +38,8 @@ unzip -o /tmp/catalogue.zip &>> /tmp/catalogue.log
 STATUS $?
 
 echo -n "moving component: "
-mv  /home/roboshop/catalogue-main  /home/roboshop/catalogue
+mv  /home/roboshop/catalogue-main  /home/roboshop/catalogue  &>/dev/null
 chown -R roboshop:roboshop /home/roboshop/catalogue
 cd /home/roboshop/catalogue
-npm install 
+npm install &>> /tmp/catalogue.log
 STATUS $?
