@@ -43,7 +43,7 @@ echo -ne "\e[33m removing the deafault content of file \e[0m; "
 rm -rf *
 STATUS $?
 
-echo -ne "\e[33m unzipping the content from the file \e[0m;"
+echo -ne "\e[33m unzipping the content from the file \e[0m;" $>> /tmp/frontend.log
 unzip /tmp/frontend.zip
 STATUS $?
 
