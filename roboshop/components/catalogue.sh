@@ -34,7 +34,7 @@ STATUS $?
 echo -ne " installing the component " 
 curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
 cd /home/roboshop
-unzip -/tmp/catalogue.zip &>> /tmp/catalogue.log
+unzip /tmp/catalogue.zip &>> /tmp/catalogue.log
 STATUS $?
 
 echo -n "moving component: "
