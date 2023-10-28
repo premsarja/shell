@@ -31,7 +31,7 @@ if [[ id -ne 0 ]]; then
 fi
 STATUS $?
 
-echo -ne " installing the component " 
+echo "installing the component" 
 curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
 pwd
 cd ${pwd}
