@@ -47,7 +47,7 @@ echo -ne "\e[33m unzipping the content from the file \e[0m;"
 unzip /tmp/frontend.zip $>> /tmp/frontend.log
 STATUS $?
 
-echo -ne "\e[33m unzimoving file to current directory \e[0m;"
+echo -ne "\e[33m moving file to current directory \e[0m;"
 mv frontend-main/* .
 mv static/* .
 rm -rf frontend-main README.md
