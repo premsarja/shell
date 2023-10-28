@@ -45,7 +45,7 @@ npm install &>> /tmp/catalogue.log
 STATUS $?
 
 echo -n "updating the ${COMPONENT} systemfile: "
-sed -ie 's/MONGO_DNSNAME/172.31.20.91/g' /home/roboshop/catalogue/systemd.service
+# sed -ie 's/MONGO_DNSNAME/172.31.20.91/g' /home/roboshop/catalogue/systemd.service #this needs to be run only once
 STATUS $?
 
 echo -n "moving the  systemfile: "
