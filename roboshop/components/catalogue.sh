@@ -50,6 +50,9 @@ STATUS $?
 
 echo -n "moving the  systemfile: "
 mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+STATUS $?
+
+echo -n "starting the systemfile: "
 systemctl daemon-reload
 systemctl start catalogue
 systemctl enable catalogue
