@@ -38,7 +38,8 @@ unzip -o /tmp/catalogue.zip &>> /tmp/catalogue.log
 STATUS $?
 
 echo -n "moving component: "
-mv -f catalogue-main catalogue
+mv  catalogue-main catalogue
+chown -R roboshop:roboshop /home/robouser/catalogue
 cd /home/roboshop/catalogue
 npm install &>> /tmp/catalogue.log
 STATUS $?
