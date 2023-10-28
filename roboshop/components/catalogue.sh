@@ -3,6 +3,7 @@
 echo "i am frontend"
 
 USER_ID=$(id -u)
+ID=roboshop
 
 if [[ $USER_ID -ne 0 ]] ; then
    echo -e "\e[31m please be ROOT user \e[0m  \n \t EXAMPLE: sudo <filename> "
@@ -18,8 +19,12 @@ else
 fi
 }
 
-echo -n "installing the nodeja component; "
+echo -n "\e[33m installing the nodejs component \e[0m ; "
 sudo yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y &>> /tmp/catalogue.log
 yum install nodejs -y  &>> /tmp/catalogue.log
 STATUS $?
 
+echo -ne "\e[33m creating roboshop user \e[0m"
+if [[ ID -ne 0 ]]; then
+useradd roboshop
+STATUS $?
