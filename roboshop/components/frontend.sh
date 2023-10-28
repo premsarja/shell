@@ -39,11 +39,20 @@ echo "installing the downloaded component file"
 cd /usr/share/nginx/html
 STATUS $?
 
-echo "removing the deafault content of file"
+echo -n "removing the deafault content of file;"
 rm -rf *
+STATUS $?
+
+echo -n "unzipping the content from the file;"
 unzip /tmp/frontend.zip
+STATUS $?
+
+echo -n "unzimoving file to current directory;"
 mv frontend-main/* .
 mv static/* .
 rm -rf frontend-main README.md
+STATUS $?
+
+echo -n "move the roboshop conf file to nginx default directory"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 STATUS $?
