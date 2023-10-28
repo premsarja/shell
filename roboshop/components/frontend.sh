@@ -29,14 +29,16 @@ echo  -n -e "\e[35m starting the service:"
 systemctl enable nginx
 systemctl start nginx
 STATUS $?
-# curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 
-# cd /usr/share/nginx/html
-# rm -rf *
-# unzip /tmp/frontend.zip
-# mv frontend-main/* .
-# mv static/* .
-# rm -rf frontend-main README.md
-# mv localhost.conf /etc/nginx/default.d/roboshop.conf
+echo -n "downloading the component:"
 
+curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
+STATUS $?
 
+ cd /usr/share/nginx/html
+ rm -rf *
+ unzip /tmp/frontend.zip
+ mv frontend-main/* .
+ mv static/* .
+ rm -rf frontend-main README.md
+ mv localhost.conf /etc/nginx/default.d/roboshop.conf
