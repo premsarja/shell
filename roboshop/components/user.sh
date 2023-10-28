@@ -30,7 +30,7 @@ fi
 STATUS $?
 
 echo -ne " installing the component " 
-$ curl -s -L -o /tmp/user.zip "https://github.com/stans-robot-project/user/archive/main.zip"
+curl -s -L -o /tmp/user.zip "https://github.com/stans-robot-project/user/archive/main.zip"
 unzip -o /tmp/user.zip &>> /tmp/user.log
 STATUS $?
 
