@@ -49,14 +49,14 @@ cd /home/roboshop/cart
 npm install
 STATUS $?
 
-# echo -n "updating the file:  "
-# sed -ie 's/MONGO_ENDPOINT/172.31.20.91/' /home/roboshop/user/systemd.service
-# sed -ie 's/REDIS_ENDPOINT/172.31.27.233/' /home/roboshop/user/systemd.service
-# STATUS $?
+echo -n "updating the file:  "
+sed -ie 's/REDIS_ENDPOINT/172.31.27.233/' /home/roboshop/cart/systemd.service
+sed -ie 's/CATALOGUE_ENDPOINT/172.31.16.108/' /home/roboshop/cart/systemd.service
+STATUS $?
 
-# echo -n "starting the systemfile: "
-# mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service
-# systemctl daemon-reload
-# systemctl start user
-# systemctl status user -l
-# STATUS $?
+echo -n "starting the systemfile: "
+mv /home/roboshop/cart/systemd.service /etc/systemd/system/cart.service
+systemctl daemon-reload
+systemctl start user
+systemctl status user -l
+STATUS $?
