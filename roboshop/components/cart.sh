@@ -49,7 +49,7 @@ npm install
 STATUS $?
 
 echo -n "updating the file:  "
-sed -i -e 's/REDIS_ENDPOINT/172.31.27.233/' -e 's/CATALOGUE_ENDPOINT/172.31.16.108/' /home/roboshop/cart/systemd.service
+# sed -i -e 's/REDIS_ENDPOINT/172.31.27.233/' -e 's/CATALOGUE_ENDPOINT/172.31.16.108/' /home/roboshop/cart/systemd.service
 STATUS $?
 
 echo -n "starting the systemfile: "
