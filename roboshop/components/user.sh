@@ -16,7 +16,7 @@ STATUS() {
 else
   echo -e "\e[33m failed \e[0m" 
   exit 2
-fi
+    fi
 }
 
 echo -ne "\e[33m installing the nodejs component \e[0m ; "
