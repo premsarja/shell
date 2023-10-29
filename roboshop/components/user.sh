@@ -26,10 +26,10 @@ STATUS $?
 
 echo -ne "\e[33m creating roboshop user \e[0m ; "
 id=${ID}
-  id ${id}  &>> ${LOGFILE} 
+  id ${id}  
   if [ $? -ne 0 ] ; then 
       echo -n "Creating Application User Account :"
-      useradd roboshop 
+      useradd roboshop
       stat $? 
   fi    
 STATUS $?
