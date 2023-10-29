@@ -30,7 +30,7 @@ id=${ID}
   if [ $? -ne 0 ] ; then 
       echo -n "Creating Application User Account :"
       useradd roboshop
-      stat $? 
+      STATUS $? 
   fi    
 STATUS $?
 
