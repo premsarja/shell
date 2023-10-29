@@ -2,6 +2,7 @@
 
 echo "i am  user"
 
+ID=roboshop
 USER_ID=$(id -u)
 
 if [[ $USER_ID -ne 0 ]] ; then
@@ -24,7 +25,6 @@ yum install nodejs -y
 STATUS $?
 
 echo -ne "\e[33m creating roboshop user \e[0m ; "
-ID=roboshop
 id=${ID}
 cat id
 if [[ $? -ne 0 ]]; then
