@@ -28,6 +28,7 @@ echo -ne "\e[33m creating roboshop user \e[0m ; "
 id=${ID}
  if [[ $? -ne 0 ]]; then
   useradd roboshop
+  echo "the PWD is : ${PWD}"
  fi
 STATUS $?
 
@@ -37,6 +38,7 @@ unzip -o /tmp/user.zip &>> /tmp/user.log
 STATUS $?
 
 echo -n "moving component: "
+echo "the PWD is : ${PWD}"
 mv user-main user
 cd /home/roboshop/user
 chown -R roboshop:roboshop /home/roboshop/user
