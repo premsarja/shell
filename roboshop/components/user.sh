@@ -26,10 +26,9 @@ STATUS $?
 
 echo -ne "\e[33m creating roboshop user \e[0m ; "
 id=${ID}
-if [[ $? -ne 0 ]]; then
+ if [[ $? -ne 0 ]]; then
   useradd roboshop
-  exit 3
-fi
+ fi
 STATUS $?
 
 echo -ne " installing the component " 
