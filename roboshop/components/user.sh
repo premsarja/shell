@@ -42,6 +42,7 @@ echo "the PWD is : ${PWD}"
 mv user-main user
 cd /home/roboshop/user
 chown -R roboshop:roboshop /home/roboshop/user
+cd /home/roboshop/user
 npm install
 STATUS $?
  
