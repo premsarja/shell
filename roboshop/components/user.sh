@@ -12,10 +12,10 @@ fi
 
 STATUS() {
     if [[ $? -eq 0 ]]; then
-  echo -e "\e[32m sucees \e[0m" 
-else
-  echo -e "\e[33m failed \e[0m" 
-  exit 2
+    echo -e "\e[32m sucees \e[0m" 
+  else
+    echo -e "\e[33m failed \e[0m" 
+    exit 2
     fi
 }
 
@@ -32,28 +32,28 @@ id=${ID}
  fi
 STATUS $?
 
-echo -ne " installing the component " 
-curl -s -L -o /tmp/user.zip "https://github.com/stans-robot-project/user/archive/main.zip"
-unzip -o /tmp/user.zip &>> /tmp/user.log
-STATUS $?
+# echo -ne " installing the component " 
+# curl -s -L -o /tmp/user.zip "https://github.com/stans-robot-project/user/archive/main.zip"
+# unzip -o /tmp/user.zip &>> /tmp/user.log
+# STATUS $?
 
-echo -n "moving component: "
-echo "the PWD is : ${PWD}"
-mv user-main user
-cd /home/roboshop/user
-chown -R roboshop:roboshop /home/roboshop/user
-cd /home/roboshop/user
-npm install
-STATUS $?
+# echo -n "moving component: "
+# echo "the PWD is : ${PWD}"
+# mv user-main user
+# cd /home/roboshop/user
+# chown -R roboshop:roboshop /home/roboshop/user
+# cd /home/roboshop/user
+# npm install
+# STATUS $?
  
-echo -n "updating the file:  "
-sed -ie 's/MONGO_ENDPOINT/172.31.20.91/' /home/roboshop/user/systemd.service
-sed -ie 's/REDIS_ENDPOINT/172.31.27.233/' /home/roboshop/user/systemd.service
-STATUS $?
+# echo -n "updating the file:  "
+# sed -ie 's/MONGO_ENDPOINT/172.31.20.91/' /home/roboshop/user/systemd.service
+# sed -ie 's/REDIS_ENDPOINT/172.31.27.233/' /home/roboshop/user/systemd.service
+# STATUS $?
 
-echo -n "starting the systemfile: "
-mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service
-systemctl daemon-reload
-systemctl start user
-systemctl status user -l
-STATUS $?
+# echo -n "starting the systemfile: "
+# mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service
+# systemctl daemon-reload
+# systemctl start user
+# systemctl status user -l
+# STATUS $?
