@@ -35,6 +35,7 @@ id=${ID}
 STATUS $?
 
 echo -ne " installing the component " 
+cd /home/roboshop
 curl -s -L -o /tmp/user.zip "https://github.com/stans-robot-project/user/archive/main.zip"
 unzip -o /tmp/user.zip &>> /tmp/user.log
 STATUS $?echo -n "moving component: "
