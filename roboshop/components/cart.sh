@@ -45,7 +45,6 @@ echo -n "moving component: "
 mv //home/roboshop/cart-main /home/roboshop/cart
 cd /home/roboshop/cart
 chown -R roboshop:roboshop /home/roboshop/cart
-cd /home/roboshop/cart
 npm install
 STATUS $?
 
