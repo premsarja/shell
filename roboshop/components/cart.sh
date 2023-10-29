@@ -42,11 +42,21 @@ unzip -o /tmp/cart.zip &>> /tmp/cart.log
 STATUS $?
 
 echo -n "moving component: "
-mv cart-main /home/roboshop/cart
-cd /home/roboshop/cart
+mv cart-main cart
 chown -R roboshop:roboshop /home/roboshop/cart
 npm install
 STATUS $?
+
+
+# echo -n "adding the COMPONENTs inside the ${user} user account:"
+# curl -s -L -o /tmp/cart.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+# cd /home/roboshop
+# unzip -o /tmp/${COMPONENT}.zip
+# mv ${COMPONENT}-main cart
+# npm install
+# sed -ie "s/REDIS_ENDPOINT/redis.roboshop-internal/g" /home/roboshop/${COMPONENT}/systemd.servicee
+# sed -ie "s/CATALOGUE_ENDPOINT/catalogue.roboshop-internal/g" /home/roboshop/${COMPONENT}/systemd.servicee
+# statusfunction $?
 
 echo -n "updating the file:  "
 sed -ie 's/REDIS_ENDPOINT/172.31.27.233/' /home/roboshop/cart/systemd.service
