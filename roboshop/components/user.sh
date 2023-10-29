@@ -38,18 +38,22 @@ echo -ne " installing the component "
 cd /home/roboshop
 curl -s -L -o /tmp/user.zip "https://github.com/stans-robot-project/user/archive/main.zip"
 unzip -o /tmp/user.zip &>> /tmp/user.log
-STATUS $?echo -n "moving component: "
-echo "the PWD is : ${PWD}"
+STATUS $?
+
+echo -n "moving component: "
 mv user-main user
 cd /home/roboshop/user
 chown -R roboshop:roboshop /home/roboshop/user
 cd /home/roboshop/user
 npm install
 STATUS $?
+
 echo -n "updating the file:  "
 sed -ie 's/MONGO_ENDPOINT/172.31.20.91/' /home/roboshop/user/systemd.service
 sed -ie 's/REDIS_ENDPOINT/172.31.27.233/' /home/roboshop/user/systemd.service
-STATUS $?echo -n "starting the systemfile: "
+STATUS $?
+
+echo -n "starting the systemfile: "
 mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service
 systemctl daemon-reload
 systemctl start user
