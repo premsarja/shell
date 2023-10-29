@@ -26,7 +26,6 @@ STATUS $?
 
 echo -ne "\e[33m creating roboshop user \e[0m ; "
 id=${ID}
-cat ${id}
 if [[ $? -ne 0 ]]; then
   useradd roboshop
   exit 3
