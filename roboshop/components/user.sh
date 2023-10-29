@@ -54,7 +54,7 @@ echo -n "updating the file:  "
 STATUS $?
 
 echo -n "starting the systemfile: "
-mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service
+# mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service
 systemctl daemon-reload
 systemctl start user
 systemctl status user -l
