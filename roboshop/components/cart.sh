@@ -42,7 +42,7 @@ unzip -o /tmp/cart.zip &>> /tmp/cart.log
 STATUS $?
 
 echo -n "moving component: "
-mv cart-main cart
+mv //home/roboshop/cart-main /home/roboshop/cart
 cd /home/roboshop/cart
 chown -R roboshop:roboshop /home/roboshop/cart
 cd /home/roboshop/cart
