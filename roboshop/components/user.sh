@@ -29,7 +29,9 @@ id=${ID}
 cat ${id}
 if [[ $? -ne 0 ]]; then
   useradd roboshop
+  exit 3
 fi
+
 STATUS $?
 
 echo -ne " installing the component " 
