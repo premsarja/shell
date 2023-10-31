@@ -6,7 +6,7 @@
 # instance_you_need
 # DNS record hosted zone id
 
-AMI_ID="ami-0c1d144c8fdd8d690"
+AMI_ID="ami-0c1d144c8fdd8d690"   ami-0c1d144c8fdd8d690
 INSTANCE_TYPE="t2.micro"
 SECURITY_GROUP="sg-071baaff364d61305"
 COMPONENT=$1
@@ -22,4 +22,8 @@ fi
 # BU,ENV,APP:COST_CENTER
 
 # aws ec2 run-instances --image-id ami-0c1d144c8fdd8d690 --instance-type ${INSTANCE_TYPE} --security-group-ids ${SECURITY_GROUP} --tag-specification "ResourceType=instance,Tags=[{key=Name,Value=1}]"
-aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE} --security-group-ids sg-071baaff364d61305  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]"
+PRIVATE_IP=${aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE} --security-group-ids sg-071baaff364d61305 /
+  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq ".Instances[].PrivateIpAddress"}
+
+echo THE private ip of ${COMPONENT} is ${PRIVATE_IP}
+
