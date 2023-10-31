@@ -26,4 +26,3 @@ PRIVATE_IP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTAN
 
 echo "THE private ip of ${COMPONENT} is ${PRIVATE_IP}"
 
-aws ec2 describe-images --filters "Name=name,Values=DevOps-LabImage-CentOS7"| jq ".Images[].ImageId" | sed -e 's/"//g')
