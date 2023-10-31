@@ -22,7 +22,7 @@ fi
 # BU,ENV,APP:COST_CENTER
 
 # aws ec2 run-instances --image-id ami-0c1d144c8fdd8d690 --instance-type ${INSTANCE_TYPE} --security-group-ids ${SECURITY_GROUP} --tag-specification "ResourceType=instance,Tags=[{key=Name,Value=1}]"
-PRIVATE_IP=${aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE} --security-group-ids sg-071baaff364d61305 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq '.Instances[].PrivateIpAddress'}
+PRIVATE_IP=${aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE} --security-group-ids sg-071baaff364d61305 --tag-specifications ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}] | jq '.Instances[].PrivateIpAddress'}
 
 echo THE private ip of ${COMPONENT} is ${PRIVATE_IP}
 
