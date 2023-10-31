@@ -31,6 +31,6 @@ echo ${AMI_ID}
 echo "creating the DNS record of ${COMPONENT}"
 
 sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADDRESS/${IPADDRESS}/" route53.JSON > /tmp/r53.json
-aws route53 change-resource-record-sets --hosted-zone-id ${HOSTEDZONE_ID} --change-batch file://tmp/r53.json
+aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONE_ID --change-batch file:///tmp/r53.json
 
 echo "private IPADDRESS of $COMPONENT is created and ready to use on ${COMPONENT}.roboshop-internal"
