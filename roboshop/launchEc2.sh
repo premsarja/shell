@@ -25,4 +25,4 @@ fi
 PRIVATE_IP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE} --security-group-ids sg-071baaff364d61305 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq '.Instances[].PrivateIpAddress' | sed -e 's/"//g')
 
 echo "THE private ip of ${COMPONENT} is ${PRIVATE_IP}"
-
+echo ${AMI_ID}
