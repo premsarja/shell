@@ -11,6 +11,7 @@ INSTANCE_TYPE="t2.micro"
 SECURITY_GROUP=$(aws ec2 describe-security-groups --filters Name=group-name,Values=default | jq '.SecurityGroups[].GroupName'| sed -e 's/"//g')
 HOSTEDZONE_ID="Z01927153H3BLSGWLBLEA"
 COMPONENT=$1
+env=dev
 if [ -z $1 ]; then
   echo -e "\e[31m COMPONENT name is needed\e[0m"
   echo -e "\e[35m ex;usage $bash launch-ec2.sh \e[0m"
