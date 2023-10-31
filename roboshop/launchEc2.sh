@@ -8,7 +8,8 @@
 
 AMI_ID=$(aws ec2 describe-images --filters "Name=name,Values=DevOps-LabImage-CentOS7"| jq ".Images[].ImageId" | sed -e 's/"//g')
 INSTANCE_TYPE="t2.micro"
-SECURITY_GROUP="sg-071baaff364d61305"
+SECURITY_GROUP=$(aws ec2 describe-security-groups --filters Name=group-name,Values=default | jq '.SecurityGroups[].GroupName'| sed -e 's/"//g')
+HOSTEDZONE_ID="Z01927153H3BLSGWLBLEA"
 COMPONENT=$1
 if [ -z $1 ]; then
   echo -e "\e[31m COMPONENT name is needed\e[0m"
@@ -26,3 +27,10 @@ PRIVATE_IP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTAN
 
 echo "THE private ip of ${COMPONENT} is ${PRIVATE_IP}"
 echo ${AMI_ID}
+
+echo "creating the DNS record of ${COMPONENT}"
+
+sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADDRESS/${IPADDRESS}/" route53.JSON > /tmp/r53.json
+aws route53 change-resource-record-sets --hosted-zone-id ${HOSTEDZONE_ID} --change-batch file://tmp/r53.json
+
+echo "private IPADDRESS of $COMPONENT is created and ready to use on ${COMPONENT}.roboshop-internal"
