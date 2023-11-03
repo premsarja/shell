@@ -13,7 +13,7 @@ if [ -z $1 ]; then
   exit 1
 fi  
 
-HOSTED_ID=Z01927153H3BLSGWLBLEA
+# HOSTED_ID=Z01927153H3BLSGWLBLEA
 
 echo $AMI_ID $INSTANCE_TYPE $SECURITY_GROUP $HOSTED_ID
 
@@ -23,6 +23,8 @@ echo $PRIVATE_IP
 echo "creating the DNS record of ${COMPONENT}"
 
 sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADDRESS/${PRIVATE_IP}/" route53.JSON > /tmp/r53.json
+HOSTED_ID=Z01927153H3BLSGWLBLEA
+
 aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONE_ID --change-batch file:///tmp/r53.json
 
 echo "private IPADDRESS of $COMPONENT is created and ready to use on ${COMPONENT}.roboshop-internal"
