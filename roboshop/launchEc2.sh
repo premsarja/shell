@@ -20,7 +20,7 @@ fi
 
 #   aws ec2 run-instances --image-id ${AMI_ID} --count 1 --instance-type ${INSTANCE_TYPE} --security-group-ids ${SECURITY_GROUP} --subnet-id subnet-6e7f829e 
 
-#EACH AND EVERY RESOURCE THAT WE CREATE IN ENTERPRISE(ORGANISATION LEVEL) WILL HAVE TAGS.
+#EACH AND EVERY RESOURCE THAT WE CREATE IN ENTERPRISE(ORGANISATION LEVEL) WILL HAVE TAGS.4
 # BU,ENV,APP:COST_CENTER
 
 # aws ec2 run-instances --image-id ami-0c1d144c8fdd8d690 --instance-type ${INSTANCE_TYPE} --security-group-ids ${SECURITY_GROUP} --tag-specification "ResourceType=instance,Tags=[{key=Name,Value=1}]"
