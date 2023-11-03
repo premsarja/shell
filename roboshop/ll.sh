@@ -5,7 +5,7 @@ AMI_ID=$(aws ec2 describe-images --filters "Name=name,Values=DevOps-LabImage-Cen
 INSTANCE_TYPE="t2.micro"
 SECURITY_GROUP=$(aws ec2 describe-security-groups --filters Name=group-name,Values=default | jq '.SecurityGroups[].GroupName'| sed -e 's/"//g')
 COMPONENT=$1
-HOSTED_ID=Z01927153H3BLSGWLBLEA
+HOSTED_ID="Z01927153H3BLSGWLBLEA"
 
 if [ -z $1 ]; then
   echo -e "\e[31m COMPONENT name is needed\e[0m"
