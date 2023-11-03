@@ -7,7 +7,7 @@
           "Name": "COMPONENT.roboshop-internal",
           "Type": "A",
           "TTL": 10,
-          "ResourceRecords": [{"Value": "PRIVATE_IP"}]
+          "ResourceRecords": [{"Value": "IPADDRESS"}]
         }
       }
     ]
