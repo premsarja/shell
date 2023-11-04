@@ -16,7 +16,7 @@ fi
 
 HOSTED_ID="Z01927153H3BLSGWLBLEA"
 
-PRIVATE_IP=$(aws ec2 run-instances --image-id ami-0c1d144c8fdd8d690 --instance-type t2.micro  --security-group-ids sg-00f2ddd66e34b1879 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}-${ENV}}]"| jq '.Instances[].PrivateIpAddress' | sed -e 's\"\\g')
+PRIVATE_IP=$(aws ec2 run-instances --image-id ami-0c1d144c8fdd8d690 --instance-type t2.micro  --security-group-ids sg-071baaff364d61305 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}-${ENV}}]"| jq '.Instances[].PrivateIpAddress' | sed -e 's\"\\g')
 echo $PRIVATE_IP
 
 echo "creating the DNS record of ${COMPONENT}"
