@@ -14,7 +14,6 @@ fi
 
 # HOSTED_ID=Z01927153H3BLSGWLBLEA
 
-echo $AMI_ID $INSTANCE_TYPE $SECURITY_GROUP $HOSTED_ID
 HOSTED_ID="Z01927153H3BLSGWLBLEA"
 
 PRIVATE_IP=$(aws ec2 run-instances --image-id ami-0c1d144c8fdd8d690 --instance-type t2.micro  --security-group-ids sg-00f2ddd66e34b1879 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}-${ENV}}]"| jq '.Instances[].PrivateIpAddress' | sed -e 's\"\\g')
