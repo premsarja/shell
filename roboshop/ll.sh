@@ -26,4 +26,4 @@ sed -e "s/COMPONENT/${COMPONENT}-${ENV}/" -e "s/IPADDRESS/${PRIVATE_IP}/" route5
 
 aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ID --change-batch file:///tmp/r53.json
 
-echo "private IPADDRESS of $COMPONENT is created and ready to use on ${COMPONENT}.roboshop-internal"
+echo "private IPADDRESS of $COMPONENT is created and ready to use on ${COMPONENT}-${ENV}.roboshop-internal"
